@@ -77,7 +77,7 @@ class ExtendedMind
     content = page.css("#bodyContent")
     
     # Remove invalid links.
-    content.css(".dablink", ".navbox", ".toccolours", ".image", ".infobox", ".new", ".toc").each(&:remove)
+    content.css(".dablink", ".navbox", ".toccolours", ".image", ".infobox", ".new", ".toc", ".metadata").each(&:remove)
     content.css("p").first.inner_html = remove_bracket_links content.css("p").first.inner_html
 
     valid_links = content.css("p > a", "p > b > a", "ul > li > a")
