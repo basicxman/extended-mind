@@ -8,7 +8,7 @@ require 'net/http'
 require 'uri'
 
 def e(text)
-  text.to_s.gsub(",", "\,")
+  text.to_s.gsub(',', '\,')
 end
 
 def add_data(start, trail, quantity, finished)
