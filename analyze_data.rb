@@ -3,6 +3,12 @@
 # Extended Mind
 # Data Analyzer
 
+require 'colorize'
+
+def c(text)
+  text.to_s.colorize(:color => :red)
+end
+
 data = File.read("data.csv").split("\n")
 data.map! { |line| line.gsub '\,', ":::COMMA:::" }
 data.map! { |line| line.split(",").map { |cell| cell.gsub ":::COMMA:::", "," } }
@@ -38,8 +44,8 @@ end
 
 percentage = (number_of_reached_entries.to_f / data.length * 100).round(2)
 
-puts "#{number_of_reached_entries} out of #{data.length} pages reached Philosophy without recursing."
-puts "#{number_of_failed_entries} out of #{data.length} pages recursed before reaching Philosophy."
-puts "#{percentage}% of pages reached Philosophy."
-puts "#{largest[:page]} survived the longest with #{largest[:num]} clicks before reaching Philosophy."
-puts "#{shortest[:page]} got to Philosophy the quickest with #{shortest[:num]} clicks."
+puts "#{c(number_of_reached_entries)} out of #{c(data.length)} pages reached Philosophy without recursing."
+puts "#{c(number_of_failed_entries)} out of #{c(data.length)} pages recursed before reaching Philosophy."
+puts "#{c(percentage.to_s + "%")} of pages reached Philosophy."
+puts "#{c(largest[:page])} survived the longest with #{c(largest[:num])} clicks before reaching Philosophy."
+puts "#{c(shortest[:page])} got to Philosophy the quickest with #{c(shortest[:num])} clicks."
