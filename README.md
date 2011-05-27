@@ -8,7 +8,9 @@ http://xkcd.com/903 (xkcd comic #903) suggested that for any article on
 Wikipedia you can get to the article on Philosophy by clicking on the 
 first valid link.
 
-    Wikipedia trivia: if you take any article, click on the first link in the article text not in parentheses or italics, and then repeat, you will eventually end up at "Philosophy".
+    Wikipedia trivia: if you take any article, click on the first link in the 
+    article text not in parentheses or italics, and then repeat, you will 
+    eventually end up at "Philosophy".
 
 Usage
 -----
