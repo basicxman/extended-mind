@@ -20,6 +20,7 @@ class ExtendedMind
 
     load_cache
     start
+    return if @exit
     crawl
     save_cache
 
@@ -119,7 +120,8 @@ class ExtendedMind
     begin
       add_crumb("/wiki/#{@start_page}")
     rescue
-      abort "Invalid start!"
+      puts "Invalid start!"
+      @exit = true
     end
   end
 
