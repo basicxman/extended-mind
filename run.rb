@@ -8,6 +8,7 @@
 
 require 'open-uri'
 require 'nokogiri'
+require 'yaml'
 
 class ExtendedMind
 
@@ -17,10 +18,26 @@ class ExtendedMind
     @start_page  = start_page
     @breadcrumbs = []
 
+    load_cache
     start
     crawl
+    save_cache
 
     print_results
+  end
+
+  def load_cache
+    if File.exist?("./mind.cache")
+      @cache = YAML.load_file("./mind.cache") || {}
+    else
+      @cache = {}
+    end
+  end
+
+  def save_cache
+    File.open("./mind.cache", "w") do |f|
+      f.write(@cache.to_yaml)
+    end
   end
 
   def wikify(page)
@@ -28,7 +45,7 @@ class ExtendedMind
   end
 
   def unwikify(page)
-    page.gsub("/wiki/", "") 
+    page.gsub("/wiki/", "")
   end
 
   def remove_bracket_links(text)
@@ -73,15 +90,16 @@ class ExtendedMind
 
   def get_pages_first_link(url)
     puts url
+    return @cache[url] if @cache[url]
     page = Nokogiri::HTML(open(url))
     content = page.css("#bodyContent")
-    
+
     # Remove invalid links.
     content.css(".dablink", ".navbox", ".toccolours", ".image", ".infobox", ".new", ".toc", ".metadata").each(&:remove)
     content.css("p").first.inner_html = remove_bracket_links content.css("p").first.inner_html
 
     valid_links = content.css("p > a", "p > b > a", "ul > li > a")
-    return find_first_wikipedia_href(valid_links)
+    return @cache[url] = find_first_wikipedia_href(valid_links)
   end
 
   def has_reached_end?
