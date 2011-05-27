@@ -30,6 +30,16 @@ Usage
 
   * Since there's actually a lot of data here, this script prints out (with colour!) various statistics.
 
+Quick Data
+----------
+
+    Out of 2031 trails generated:
+    1505 out of 2031 pages reached Philosophy without recursing.
+    517 out of 2031 pages recursed before reaching Philosophy.
+    74.1% of pages reached Philosophy.
+    Zekoi survived the longest with 32 clicks before reaching Philosophy.
+    Salford_Council_election got to Philosophy the quickest with 1 clicks.
+
 Special Thanks
 --------------
 

@@ -44,6 +44,7 @@ end
 
 percentage = (number_of_reached_entries.to_f / data.length * 100).round(2)
 
+puts "Out of #{c(data.length)} trails generated:"
 puts "#{c(number_of_reached_entries)} out of #{c(data.length)} pages reached Philosophy without recursing."
 puts "#{c(number_of_failed_entries)} out of #{c(data.length)} pages recursed before reaching Philosophy."
 puts "#{c(percentage.to_s + "%")} of pages reached Philosophy."
