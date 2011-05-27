@@ -33,12 +33,15 @@ Usage
 Quick Data
 ----------
 
-    Out of 2031 trails generated:
-    1505 out of 2031 pages reached Philosophy without recursing.
-    517 out of 2031 pages recursed before reaching Philosophy.
-    74.1% of pages reached Philosophy.
+    Out of 2865 trails generated:
+    2281 out of 2865 pages reached Philosophy without recursing.
+    582 out of 2865 pages recursed before reaching Philosophy.
+    79.62% of pages reached Philosophy.
     Zekoi survived the longest with 32 clicks before reaching Philosophy.
-    Salford_Council_election got to Philosophy the quickest with 1 clicks.
+    Cedar_bark_textile got to Philosophy the quickest with 4 clicks.
+    14.8 is the average number of clicks to reach Philosophy.
+    62 pages when clicked on will doom the trail to recursion.
+    Positivism caused recursion 312 times.
 
 Special Thanks
 --------------
