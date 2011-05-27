@@ -28,7 +28,7 @@ class ExtendedMind
   end
 
   def unwikify(page)
-    page.gsub("/wiki/", "") 
+    page.gsub("/wiki/", "")
   end
 
   def remove_bracket_links(text)
@@ -75,7 +75,7 @@ class ExtendedMind
     puts url
     page = Nokogiri::HTML(open(url))
     content = page.css("#bodyContent")
-    
+
     # Remove invalid links.
     content.css(".dablink", ".navbox", ".toccolours", ".image", ".infobox", ".new", ".toc", ".metadata").each(&:remove)
     content.css("p").first.inner_html = remove_bracket_links content.css("p").first.inner_html
